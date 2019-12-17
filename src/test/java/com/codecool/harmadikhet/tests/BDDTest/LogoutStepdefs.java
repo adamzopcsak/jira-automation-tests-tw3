@@ -3,6 +3,7 @@ package com.codecool.harmadikhet.tests.BDDTest;
 import com.codecool.harmadikhet.pages.HomePage;
 import com.codecool.harmadikhet.pages.LogInPage;
 import com.codecool.harmadikhet.pages.LogoutConfirmationPage;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -28,6 +29,10 @@ public class LogoutStepdefs extends BaseStepdefs {
     public void checkIfTheLogoutWasSuccessful() {
         LogoutConfirmationPage logoutConfirmationPage = new LogoutConfirmationPage(baseTest.getDriver());
         assertTrue(logoutConfirmationPage.isLogoutConfirmed());
+    }
+
+    @And("^I close the browser$")
+    public void closeBrowser() {
         baseTest.quitDriver();
     }
 
