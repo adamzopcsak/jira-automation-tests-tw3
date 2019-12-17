@@ -6,9 +6,9 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
-    protected WebDriver driver;
-    String baseUrl;
-    WebDriverWait wait;
+    public WebDriver driver;
+    public String baseUrl;
+    public WebDriverWait wait;
 
     public BasePage(){}
 
