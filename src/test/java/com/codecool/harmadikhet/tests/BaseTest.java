@@ -14,10 +14,11 @@ import java.io.IOException;
 
 @TestInstance(Lifecycle.PER_CLASS)
 public class BaseTest {
-    String username;
-    String password;
-    WebDriver driver;
-    LogInPage logInPage;
+    protected String username;
+    protected String password;
+    protected WebDriver driver;
+
+    public LogInPage logInPage;
 
     @BeforeAll
     public void setupTestEnvironment() {
@@ -48,6 +49,22 @@ public class BaseTest {
             e.printStackTrace();
         }
         return basePath;
+    }
+
+    public LogInPage getLogInPage() {
+        return logInPage;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 
 }
