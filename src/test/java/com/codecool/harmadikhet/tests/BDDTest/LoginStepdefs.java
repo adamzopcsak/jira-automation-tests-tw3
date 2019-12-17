@@ -8,7 +8,6 @@ import cucumber.api.java.en.When;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
 public class LoginStepdefs extends BaseStepdefs {
 
     @Given("^A valid Jira account$")

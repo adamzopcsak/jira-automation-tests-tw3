@@ -1,4 +1,4 @@
-Feature: Jira feature tests
+Feature: Jira login feature
 
   Scenario: Log in to Jira successfully
     Given A valid Jira account
