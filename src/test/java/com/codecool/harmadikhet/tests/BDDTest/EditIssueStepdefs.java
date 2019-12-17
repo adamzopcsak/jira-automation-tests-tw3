@@ -3,6 +3,7 @@ package com.codecool.harmadikhet.tests.BDDTest;
 import com.codecool.harmadikhet.pages.IssueDetailsPage;
 import com.codecool.harmadikhet.pages.IssueEditModalPage;
 import com.codecool.harmadikhet.pages.LogInPage;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -31,9 +32,13 @@ public class EditIssueStepdefs extends BaseStepdefs {
         issueEditModalPage.acceptEdit();
     }
 
-    @Then("^I see the issue with the Summary I just entered in the previous step, and I close the browser$")
+    @Then("^I see the issue's summary has changed to \"edited summary\"$")
     public void checkEditedSummary() {
         assertEquals(issueDetailsPage.getEditedIssueSummary(), "edited summary");
+    }
+
+    @And("I reset the test data and quit the browser")
+    public void resetTestDataAndCloseBrowser() {
         issueDetailsPage.editGivenIssue();
         issueEditModalPage.editIssue("summary");
         issueEditModalPage.acceptEdit();
